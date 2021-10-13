@@ -1,7 +1,8 @@
 <!DOCTYPE html>
+<!-- <link rel="stylesheet" type="text/css" href="styles.css" /> -->
 <html>
     <head>
-      <title>Example</title>
+      <title>Lydia's Tic Tac Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -11,7 +12,111 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
+
     <body>
-      <h1>Browser Template</h1>
-    </body>
+      <!-- We need the Sign In Page Here
+      This will include the title of the game, New User? Name, email, password, pass conf, and signup button -this will be a form-
+    Then it will ask coming back?
+  another form which will include email, password, and sign in button.
+
+Lastly, we want to know if we will create a guest check in button for recruiters. I read somewhere that they want a guest check in if they do not want to lose time logging in-->
+<h1>Tic Tac Toe</h1>
+<section id= "before-sign-in">
+  <form id="sign-up" class="border">
+<fieldset>
+  <legend>New User?</legend>
+  <!-- <input type="name" name="credentials[name]" -->
+  <!-- placeholder="Your Name" required> -->
+  <input type="email" name="credentials[email]" placeholder="Email" required>
+  <input type="password" name="credentials[password]" placeholder="Password" required>
+
+  <input type="password" name="credentials[password_confirmation]" placeholder="Retype Password" required>
+
+  <button class="btn btn-primary">Sign Up</button>
+</fieldset>
+</form>
+
+<!-- In this same page, we will have a sign in form as well -->
+<form id="sign-in" class="border">
+  <fieldset>
+    <legend>Welcome Back!</legend>
+    <input type="email" name="credentials[email]" placeholder="Email" required>
+    <input type="password" name="credentials[password]" placeholder="Password" required>
+    <button class="btn btn-primary">Sign In</button>
+  </fieldset>
+</form>
+</section>
+
+
+
+
+
+
+    <!-- Once Your Are signed in, then you have the home page. We only want to go to this page once you are signed in. The home page will include:
+    Are you ready title? Start game button, signout button, see stats button-->
+<section id="after-sign-in">
+  <h1>Are You Ready?</h1>
+  <!-- We need a Start Game Button that will take you to the game page -->
+<button class="btn btn-primary">Start Game</button>
+
+  <!-- Maybe we will add a change password if we have time -->
+
+  <!-- Then comes the logout button -->
+  <form id="sign-out" class="border">
+    <!-- <fieldset> -->
+      <button class="btn btn-primary">Sign Out</button>
+    <!-- </fieldset> -->
+  </form>
+<!-- Then we will have a see stats button, but that will be in a long while -->
+
+</section>
+
+      <!-- Once you select to start game on the home page, then we will have the actual game which will include the title, welcome player, grid, home, signout, and playagain button -->
+      <section id="start-game">
+      <h1>Lydia's Tic Tac Toe</h1>
+      <h2> Welcome Friend!</h2>
+      <!-- I first need to create the board for my Tic Tac Toe -->
+      <!-- I will make an id so that I am able to use it in JS later, and the box1-9 are also the id so they can be used in the JS because the class will be for CSS. -->
+
+
+      <div class="container">
+        <div class="row">
+          <div class="col-4">1</div>
+          <div class="col-4">2</div>
+          <div class="col-4">3</div>
+        </div>
+        <div class="row">
+          <div class="col-4">4</div>
+          <div class="col-4">5</div>
+          <div class="col-4">6</div>
+        </div>
+        <div class="row">
+          <div class="col-4">7</div>
+          <div class="col-4">8</div>
+          <div class="col-4">9</div>
+</div>
+      </div>
+
+
+
+
+
+      <button class="btn btn-primary">Home</button>
+      <button class="btn btn-primary">Sign Out</button>
+      <button class="btn btn-primary">Play Again</button>
+</section>
+      <!-- Lastly, if the player loses or draws, it will bring them to the page that says, You Win! or Draw, and a play again button that redirects you to the Game page again and tracks the score for the user  -->
+      <section id="outcome-page">
+      <!-- <div class="messageWin"></div> -->
+        <div display-winning-message>You Won! 🥳</div>
+        <div display-draw-message>Draw 😵‍💫</div>
+        <!-- create a button to play again and redirect you to the starting-game page -->
+        <button class="btn btn-primary">Play Again!</button>
+    </section>
+<!-- create a section for our user feedback -->
+<section>
+  <div id="error-message"></div>
+  <div id="movies-display"></div>
+</section>
+  </body>
 </html>

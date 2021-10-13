@@ -1,1 +1,28 @@
 @import '~bootstrap/scss/bootstrap';
+.container {
+  //display: flex;
+  //align-content: center;
+  //flex-wrap: nowrap;
+  //justify-content: center;
+  //align-items: center;
+  //width: 153px;
+  //margin-right: 0px;
+  //margin-top: 0px;
+  //margin-bottom: 0px;
+  //margin-left: 0px;
+}
+
+.col-4 {
+  align-items: center;
+  background-color: white;
+  width: 200px;
+  height: 200px;
+  //flex-wrap: nowrap;
+  //margin: 0px;
+  //padding-bottom: 32%; /* Same as width, sets height */
+  //margin-bottom: 2%; /* (100-32*3)/2 */
+  //position: relative;
+  border: 1px solid blue;
+  display: flex;
+  justify-content: center;
+}
