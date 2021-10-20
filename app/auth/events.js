@@ -7,7 +7,7 @@ const getFormFields = require('../../lib/get-form-fields');
 const api = require('./api');
 // require out ui functions to update the page
 const ui = require('./ui');
-
+const logic = require("./logic");
 const onSignUp = function (event) {
   // prevent the default action of refreshing the page
   event.preventDefault();
@@ -44,24 +44,6 @@ const onSignIn = function (event) {
     .catch(ui.signInFailure);
 };
 
-// const onChangePassword = function (event) {
-//   // prevent the default action of refreshing the page
-//   event.preventDefault();
-
-//   // event.target is the form that caused the 'submit' event
-//   const form = event.target;
-//   // get the data from our form element
-//   const formData = getFormFields(form);
-
-  // // make a PATCH /change-password request, pass it the old and new passwords
-  // api
-  //   .changePassword(formData)
-  //   // if our change password request is successful, run the changePasswordSuccess function
-  //   .then(ui.changePasswordSuccess)
-  //   // otherwise, if an error occurred, run a changePasswordFailure function
-  //   .catch(ui.changePasswordFailure);
-//};
-
 const onSignOut = function () {
   // prevent the default action of refreshing the page
   //event.preventDefault()
@@ -80,39 +62,19 @@ const onSignOut = function () {
     .catch(ui.signOutFailure);
 };
 
-
-const onStartNewGame = function () {
-  gameCellTracker = ["", "", "", "", "", "", "", "", ""];
-  api.startNewGame()
-  .then(newGameData)
-  .catch(ui.signOutFailure)
-  return token
+const onStartGame = (event) => {
+  event.preventDefault();
+  const form = event.target;
+  api
+    .startGame(form)
+    .then(ui.startGameSuccess, logic)
+    .catch(ui.startGameFailure);
 };
-//
 
-// const onStartGame = function () {
-// //   // prevent the default action of refreshing the page
-// //   //event.preventDefault()
 
-// //   // event.target is the form that caused the 'submit' event
-// const form = event.target;
-//   // get the data from our form element
-//   //const formData = getFormFields(form)
-
-//   // make a PATCH /change-password request, pass it the old and new passwords
-//   //api
-//     //.signOut()
-//     // if our change password request is successful, run the changePasswordSuccess function
-//     //.then(ui.signOutSuccess)
-//     // otherwise, if an error occurred, run a changePasswordFailure function
-//     //.catch(ui.signOutFailure);
-// };
-// // export our event handler functions, so we can use them
-// // in app.js
 module.exports = {
   onSignUp,
   onSignIn,
-  //onChangePassword,
   onSignOut,
-  onStartNewGame
+  onStartGame
 };

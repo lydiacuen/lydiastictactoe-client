@@ -3,36 +3,7 @@
 // between different files
 const store = require('../store');
 
-//these do not do anything yet. But I am hoping to ask about it soon. I just want my tictactoe to work first
-//How do I get it so that the home page initially does not include the other sections
 
-// const signInPage = function (event) {
-//   $('.after-sign-in').hide()
-//   $('.start-game').hide()
-//   $('.outcome-page').hide()
-//   $('.before-sign-in').show()
-// }
-
-// const homePage = function (event) {
-//   $(".after-sign-in").show();
-//   $(".start-game").hide();
-//   $(".outcome-page").hide();
-//   $(".before-sign-in").hide();
-// };
-
-// const gamePage = function (event) {
-//   $(".after-sign-in").hide();
-//   $(".start-game").show();
-//   $(".outcome-page").hide();
-//   $(".before-sign-in").hide();
-// };
-
-// const afterGamePage = function (event) {
-//   $(".after-sign-in").hide();
-//   $(".start-game").hide();
-//   $(".outcome-page").show();
-//   $(".before-sign-in").hide();
-// };
 
 const signUpSuccess = function (responseData) {
   // tell the user it was successful
@@ -79,8 +50,6 @@ const signInSuccess = function (responseData) {
 
   // After we sign in, hide the section with the id `before-sign-in`
   $('#before-sign-in').hide();
-  $('#start-game').hide();
-  $('#outcome-page').hide();
   // After we sign in, show the section with the id `after-sign-in`
   $('#after-sign-in').show();
 
@@ -99,32 +68,6 @@ const signInFailure = function (error) {
   console.error('error is', error);
 };
 
-// const changePasswordSuccess = function (responseData) {
-//   // tell the user it was successful
-//   $("#movies-display").text("Changed password successfully!");
-
-//   // remove existing classes, then add a green text-success class from bootstrap
-//   $("#movies-display").removeClass();
-//   $("#movies-display").addClass("text-success");
-
-//   // clear (reset) all of the forms
-//   $("form").trigger("reset");
-
-//   console.log("responseData is", responseData);
-// };
-
-// const changePasswordFailure = function (error) {
-//   // tell the user it was failure
-//   $("#error-message").text("Changing passwords failed!");
-
-//   // remove existing classes, then add a red text-danger class from bootstrap
-//   $("#error-message").removeClass();
-//   $("#error-message").addClass("text-danger");
-
-//   // print the error
-//   console.error("error is", error);
-// };
-
 const signOutSuccess = function (responseData) {
   // tell the user it was successful
   $('#movies-display').text('Signed Out successfully!');
@@ -133,8 +76,6 @@ const signOutSuccess = function (responseData) {
   $('#movies-display').removeClass();
   $('#movies-display').addClass('text-success');
   $('#after-sign-in').hide();
-  $("#start-game").hide();
-  $("#outcome-page").hide();
   $('#before-sign-in').show();
   // clear (reset) all of the forms
   $('form').trigger('reset');
@@ -150,23 +91,18 @@ const signOutFailure = function (error) {
   $('#sign-out-failure').removeClass();
   $('#sign-out-failure').addClass('text-danger');
 
-  //$('#after-sign-in').hide()
-  //$('#before-sign-in').show()
-
   // print the error
   console.error('error is', error);
 };
 
-const startNewGame = function () {
+const startNewGameSuccess = function () {
   // tell the user it was successful
   //$("#movies-display").text("Signed Out successfully!");
 
   // remove existing classes, then add a green text-success class from bootstrap
   //$("#movies-display").removeClass();
-  $("#movies-display").addClass("text-success");
-  $("#after-sign-in").hide();
-  $("#start-game").show();
-  $("#outcome-page").hide();
+  $("#startNewGameSuccess").addClass("text-success");
+  $("#startNewGameSuccess").hide();
   $("#before-sign-in").hide();
   // clear (reset) all of the forms
   $("form").trigger("reset");
@@ -174,18 +110,26 @@ const startNewGame = function () {
   //console.log("responseData is", responseData);
 };
 
+const startNewGameFailure = function(error){
+	$("#start-new-game-failure").text("Start New Game  Failed!");
+  $("#start-new-game-failure").removeClass();
+  $("#start-new-game-failure").addClass("text-danger");
+  console.error("error is", error);
+}
+const onWin = function(responseData){
+
+}
+
+
+
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
   signInFailure,
-  //changePasswordSuccess,
-  //changePasswordFailure,
   signOutSuccess,
   signOutFailure,
-  // signInPage,
-  // homePage,
-  // gamePage,
-  // afterGamePage
-  startNewGame
+  startNewGameSuccess,
+  startNewGameFailure
 };
