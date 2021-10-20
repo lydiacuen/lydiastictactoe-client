@@ -20,7 +20,17 @@
   another form which will include email, password, and sign in button.
 
 Lastly, we want to know if we will create a guest check in button for recruiters. I read somewhere that they want a guest check in if they do not want to lose time logging in-->
+
+<!-- This will be the title -->
+<!-- eventually, I want to make this title a container so that I am able to make it: something like this to make it pretty:
+<div class="container">
+      <div class="row center">
+        <h1 class="title col-12">Tic Tac Toe</h1>
+      </div> -->
 <h1>Tic Tac Toe</h1>
+
+
+<!-- I want to separate the sections with before-sign-in, which will be the login page. after-sign-in which will be the home page, the start-game page that will include the game board, and lastly, the outcome-page which will include the results, and the button to play another game.  -->
 <section id= "before-sign-in">
   <form id="sign-up" class="border">
 <fieldset>
@@ -61,58 +71,55 @@ Lastly, we want to know if we will create a guest check in button for recruiters
 
   <!-- Maybe we will add a change password if we have time -->
 
-  <!-- Then comes the logout button -->
-  <form id="sign-out" class="border">
-    <!-- <fieldset> -->
-      <button class="btn btn-primary">Sign Out</button>
-    <!-- </fieldset> -->
-  </form>
+
 <!-- Then we will have a see stats button, but that will be in a long while -->
 
-</section>
+<!-- </section> -->
 
-      <!-- Once you select to start game on the home page, then we will have the actual game which will include the title, welcome player, grid, home, signout, and playagain button -->
-      <section id="start-game">
-      <h1>Lydia's Tic Tac Toe</h1>
-      <h2> Welcome Friend!</h2>
+  <!-- Once you select to start game on the home page, then we will have the actual game which will include the title, welcome player, grid, home, signout, and playagain button -->
+  <!-- <section id="start-game"> -->
+  <!-- <h1>Lydia's Tic Tac Toe</h1> -->
+
       <!-- I first need to create the board for my Tic Tac Toe -->
       <!-- I will make an id so that I am able to use it in JS later, and the box1-9 are also the id so they can be used in the JS because the class will be for CSS. -->
 
 
       <div class="container">
-        <div class="row">
-          <div class="col-4">1</div>
-          <div class="col-4">2</div>
-          <div class="col-4">3</div>
-        </div>
-        <div class="row">
-          <div class="col-4">4</div>
-          <div class="col-4">5</div>
-          <div class="col-4">6</div>
-        </div>
-        <div class="row">
-          <div class="col-4">7</div>
-          <div class="col-4">8</div>
-          <div class="col-4">9</div>
-</div>
-      </div>
-
-
-
-
-
-      <button class="btn btn-primary">Home</button>
-      <button class="btn btn-primary">Sign Out</button>
+      <!-- <h2> Welcome Friend!</h2> -->
       <button class="btn btn-primary">Play Again</button>
+        <div class="row">
+          <div id="0" class="box column cell">0</div>
+          <div id="1" class="box column cell">1</div>
+          <div id="2" class="box column cell">2</div>
+        </div>
+        <div class="row">
+          <div id="3" class="box column cell">3</div>
+          <div id="4" class="box column cell">4</div>
+          <div id="5" class="box column cell">5</div>
+        </div>
+        <div class="row">
+          <div id="6" class="box column cell">6</div>
+          <div id="7" class="box column cell">7</div>
+          <div id="8" class="box column cell">8</div>
+  </div>
+
+  </div>
+<form id="sign-out" class="border">
+  <!-- <fieldset> -->
+  <button class="btn btn-primary">Sign Out</button>
+  <!-- <button class="button">Sign Out</button> -->
+</form>
+
+
 </section>
       <!-- Lastly, if the player loses or draws, it will bring them to the page that says, You Win! or Draw, and a play again button that redirects you to the Game page again and tracks the score for the user  -->
-      <section id="outcome-page">
+<section id="outcome-page">
       <!-- <div class="messageWin"></div> -->
-        <div display-winning-message>You Won! 🥳</div>
-        <div display-draw-message>Draw 😵‍💫</div>
+    <div display-winning-message>You Won! 🥳</div>
+    <div display-draw-message>Draw 😵‍💫</div>
         <!-- create a button to play again and redirect you to the starting-game page -->
-        <button class="btn btn-primary">Play Again!</button>
-    </section>
+    <button class="btn btn-primary">Play Again!</button>
+</section>
 <!-- create a section for our user feedback -->
 <section>
   <div id="error-message"></div>

@@ -1,28 +1,83 @@
 @import '~bootstrap/scss/bootstrap';
-.container {
-  //display: flex;
-  //align-content: center;
-  //flex-wrap: nowrap;
-  //justify-content: center;
-  //align-items: center;
-  //width: 153px;
-  //margin-right: 0px;
-  //margin-top: 0px;
-  //margin-bottom: 0px;
-  //margin-left: 0px;
+
+// #gameBoard
+// .legend {
+// // //padding: 40px;
+// //  // height: 100vh;
+// //   //display: flex;
+// justify-content: center;
+// align-items: center;
+// //   //flex-direction: column;
+// background-color: rgba(152, 138, 129, 1);
+// }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(152, 138, 129, 1);
+  color:rgba(139, 52,50, 1)
+  //color: var(--purple)
+  // color: var(--[“152”, “138”, “129”, 0.75])
+  //font-family: sans-serif;
 }
 
-.col-4 {
+.container {
+  padding: 40px;
+  height: 100vh;
+  //display: flex;
+  justify-content: center;
   align-items: center;
-  background-color: white;
-  width: 200px;
-  height: 200px;
+  flex-direction: column;
+  background-color: rgba(152, 138, 129, 1);
+}
+
+
+.box {
+  align-items: center;
+  //background-color: white;
+  width: 100px;
+  height: 100px;
   //flex-wrap: nowrap;
   //margin: 0px;
   //padding-bottom: 32%; /* Same as width, sets height */
   //margin-bottom: 2%; /* (100-32*3)/2 */
   //position: relative;
-  border: 1px solid blue;
-  display: flex;
+  border: 3px solid rgba(203, 183, 164, 1);
+  background-color: rgba(139, 52, 50, 1);
+  display:flex;
   justify-content: center;
+}
+
+#after-sign-in {
+  //make it not display on the page to start off with
+  display: none;
+}
+
+#outcome-page {
+  //make it not display on the page to start off with
+  display: none;
+}
+
+#start-game {
+  //make it not display on the page to start off with
+  display: none;
+}
+
+
+
+.btn-primary {
+// background-color: #8064A2 !important;
+background-color: rgba(203, 183, 164, 1) !important;
+border: 2px rgba(139, 52, 50, 1)!important;
+color:rgba(139, 52, 50, 1);
+  // padding: 10px 20px;
+  // text-align: center;
+  // text-decoration: none;
+  // display: inline-block;
+  // font-size: 15px;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
 }

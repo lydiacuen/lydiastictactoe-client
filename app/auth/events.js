@@ -80,11 +80,39 @@ const onSignOut = function () {
     .catch(ui.signOutFailure);
 };
 
-// export our event handler functions, so we can use them
-// in app.js
+
+const onStartNewGame = function () {
+  gameCellTracker = ["", "", "", "", "", "", "", "", ""];
+  api.startNewGame()
+  .then(newGameData)
+  .catch(ui.signOutFailure)
+  return token
+};
+//
+
+// const onStartGame = function () {
+// //   // prevent the default action of refreshing the page
+// //   //event.preventDefault()
+
+// //   // event.target is the form that caused the 'submit' event
+// const form = event.target;
+//   // get the data from our form element
+//   //const formData = getFormFields(form)
+
+//   // make a PATCH /change-password request, pass it the old and new passwords
+//   //api
+//     //.signOut()
+//     // if our change password request is successful, run the changePasswordSuccess function
+//     //.then(ui.signOutSuccess)
+//     // otherwise, if an error occurred, run a changePasswordFailure function
+//     //.catch(ui.signOutFailure);
+// };
+// // export our event handler functions, so we can use them
+// // in app.js
 module.exports = {
   onSignUp,
   onSignIn,
   //onChangePassword,
   onSignOut,
+  onStartNewGame
 };
