@@ -101,8 +101,8 @@ const startNewGameSuccess = function () {
 
   // remove existing classes, then add a green text-success class from bootstrap
   //$("#movies-display").removeClass();
-  $("#startNewGameSuccess").addClass("text-success");
-  $("#startNewGameSuccess").hide();
+  $("#start-new-game-success").addClass("text-success");
+  $("#start-new-game-success").hide();
   $("#before-sign-in").hide();
   // clear (reset) all of the forms
   $("form").trigger("reset");
