@@ -46,7 +46,7 @@ const onSignIn = function (event) {
 
 const onSignOut = function () {
   // prevent the default action of refreshing the page
-  //event.preventDefault()
+  event.preventDefault()
 
   // event.target is the form that caused the 'submit' event
   const form = event.target;
