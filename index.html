@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lydia's Tic Tac Toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <section id="before-sign-in">
+    <h1>🍷Wine and 🍫Chocolate  Tic Tac Toe</h1>
+    <!-- Sign up form goes here! -->
+    <form id="sign-up" class="border">
+      <!-- to group multiple inputs together in our form -->
+      <fieldset>
+        <legend>Sign Up</legend>
+        <label for="em">Email:</label>
+        <input type="email" name="credentials[email]" id="em" placeholder="Enter Email" required>
+        <label for="ps">Password:</label>
+        <input type="password" name="credentials[password]" id="ps" placeholder="Enter Password" required>
+        <label for="psc">Password Confirmation:</label>
+        <input type="password" name="credentials[password_confirmation]" id="psc"
+          placeholder="Enter Password Confirmation" required>
+        <button class="btn btn-primary">Sign-Up</button>
+      </fieldset>
+    </form>
+    <!-- Sign in -->
+    <form id="sign-in" class="border">
+      <fieldset>
+        <legend>Sign In</legend>
+        <label for="email">Email:</label>
+        <input type="email" name="credentials[email]" id="email" placeholder="Enter Email" required>
+        <label for="password">Password:</label>
+        <input type="password" name="credentials[password]" id="password" placeholder="Enter Password" required>
+        <button class="btn btn-primary">Sign-In</button>
+      </fieldset>
+    </form>
+
+  </section>
+  <!-- After sign in Page User should see this -->
+
+  <section id="after-sign-in">
+
+    <div class="h1">
+      <h1>Wine and Chocolate Tic Tac Toe</h1>
+      <div class="buttons">
+        <button id="startGame" class="btn btn-primary">Play Game</button>
+        <button id="resetGame" class="btn btn-primary">Reset Game</button>
+      </div>
+      <div>
+        <h2 id="outcome"></h2>
+      </div>
+      </div>
+
+      <!-- Sign out -->
+      <form id="sign-out" class="border">
+        <fieldset>
+          <button class="btn btn-primary">Sign Out</button>
+        </fieldset>
+      </form>
+
+
+      <div class="container">
+        <div class="row">
+          <div class="box" name="cell 0" id="0"></div>
+          <div class="box" name="cell 1" id="1"></div>
+          <div class="box" name="cell 2" id="2"></div>
+        </div>
+        <div class="row">
+          <div class="box" name="cell 3" id="3"></div>
+          <div class="box" name="cell 4" id="4"></div>
+          <div class="box" name="cell 5" id="5"></div>
+        </div>
+        <div class="row">
+          <div class="box" name="cell 6" id="6"></div>
+          <div class="box" name="cell 7" id="7"></div>
+          <div class="box" name="cell 8" id="8"></div>
+        </div>
+      </div>
+</section>
+  <!-- create a section for your user feedback -->
+  <section>
+    <div id="error-message"></div>
+
+    <div id="movies-display"></div>
+    <div id="sign-up-success"></div>
+    <div id="sign-up-failure"></div>
+    <div id="sign-in-success"></div>
+    <div id="sign-in-failure"></div>
+    <div id="start-new-game-success"></div>
+    <div id="start-new-game-failure"></div>
+  </section>
+
+</body>
+
+</html>
